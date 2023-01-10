@@ -12,7 +12,10 @@ function StateCounter() {
       <h1>{countB}</h1>
       {/* If you are going to use the old value give the setState function a callback */}
       <button onClick={() => setCountB((oldCount) => oldCount + 1)}>Increment</button>
-      {/* This is prone to bugs, due to how React tries minimize the time it has to rerender the DOM */}
+      {/**
+       * This is prone to bugs, due to how React tries minimize the time it has to rerender the DOM
+       * read more here https://beta.reactjs.org/reference/react/useState#setstate-caveats
+       */}
       <button onClick={() => setCountB(countB - 1)}>Decrement</button>
     </>
   )
